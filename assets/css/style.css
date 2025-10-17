@@ -1,0 +1,309 @@
+/*
+F5AD18: not bright orange
+FF9D00: bright orange
+EBA44C: Erkut orange
+
+7B542F : dark brown
+FFE6A8: light brown
+FFF4E6: Arda brown
+
+
+*/
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Baloo+2:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+:root {
+    --bright-orange: #FF9D00;
+    --softer-orange: #F5AD18;
+    --erkut-canse-orange: #EBA44C;
+    --dark-brown: #7B542F;
+    --light-brown: #FFE6A8;
+    --arda-brown: #FFF4E6;
+
+  /* This is the font stack you provided */
+  --font-primary: 'Fredoka', 'Baloo 2', 'Nunito', sans-serif;
+}
+
+.navigation-bar {
+    background-color: var(--erkut-canse-orange);
+}
+
+.footer {
+    background-color: var(--erkut-canse-orange);
+}
+
+body {
+    background-color: var(--arda-brown);
+    color: #000000;
+    font-family: var(--font-primary);
+}
+
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-family: var(--font-primary);
+    color: #F5AD18; 
+}
+
+.lead{
+    font-family: var(--font-primary);
+    font-size: 25px;
+}
+
+p {
+    font-family: var(--font-primary);
+    color: #7B542F;
+}
+
+header .text-bg-dark {
+    background-color: #EBA44C !important; 
+    transition: background-color 0.3s ease;
+}
+
+.nav-link,
+header a.text-white, 
+header svg {
+    color: #FFE6A8 !important;
+    fill: #FFE6A8 !important;
+    transition: color 0.3s ease, fill 0.3s ease;
+}
+
+.nav-link.text-secondary { 
+    color: #FFE6A8 !important;
+}
+
+.nav-link:hover {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+.btn-icon-only {
+    padding: 0rem !important; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-icon-only svg {
+    width: 100%; 
+    height: 100%;
+}
+
+.btn-outline-danger {
+    border-width: 0px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    background-color: var(--dark-brown);
+    color: #FFFFFF;
+    border-width: 0px;
+}
+
+.btn-secondary {
+    background-color: var(--bright-orange); 
+    border-color: var(--bright-orange); 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  /* Set the background to white */
+  background-color: white;
+  
+  /* It's usually good practice to adjust the border and text color for contrast */
+  color: var(--bright-orange);
+  border-color: var(--bright-orange);
+}
+
+.btn-outline-primary {
+    color: var(--bright-orange);        
+    border-color: var(--bright-orange); 
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    color: #FFFFFF;
+    background-color: var(--bright-orange);
+    border-color: var(--bright-orange);
+
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary:focus-visible {
+    color: #FFFFFF;
+    background-color: #B6771D;
+    border-color: #B6771D;
+    box-shadow: 0 0 0 0.25rem rgba(255, 157, 0, 0.5);
+}
+
+.custom-hover-outline {
+    background-color: var(--bright-orange); /* Remove background fill */
+    border-color: var(--bright-orange); /* Add primary colored border */
+    /* Default state: filled (handled by btn-primary) */
+    transition: all 0.2s ease-in-out; /* Smooth transition for hover */
+}
+
+.custom-hover-outline:hover {
+    /* On hover: change to outline style */
+    background-color: transparent; /* Remove background fill */
+    border-color: var(--bright-orange); /* Add primary colored border */
+}
+
+/* If you want to ensure the SVG color changes, you might need specific targeting */
+.custom-hover-outline.btn-primary:hover svg {
+    fill: var(--bright-orange); /* Ensure SVG fill color changes on hover */
+}
+
+
+
+
+/* --- Calendar Styling --- */
+.calendar {
+    margin-top: 2rem;
+    padding: 20px;
+    border: 10px solid var(--dark-brown);
+    border-radius: 8px;
+    background-color: var(--light-brown);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.cal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 5px solid var(--dark-brown);
+}
+
+.nav-btn {
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.cal-cell {
+    padding: 8px 5px;
+    border-radius: 4px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border: 5px solid var(--dark-brown); /* Light border for definition */
+}
+
+.cal-cell strong {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
+    color: #495057;
+}
+
+.cal-cell .date {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+/* Highlight Today */
+.cal-cell.today {
+    background-color: var(--erkut-canse-orange); /* Very light blue */
+    border: 5px solid var(--dark-brown);
+}
+
+.cal-cell.today .date {
+    color: var(--dark-brown);
+}
+
+/* Event Styling */
+.event {
+    display: block;
+    width: 100%;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    padding: 3px 5px;
+    margin-top: 2px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    background-color: #dc3545; /* Default event color */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: background-color 0.2s;
+}
+
+.event:hover {
+    background-color: #c82333;
+    text-decoration: none;
+}
+
+.event .emoji {
+    margin-right: 3px;
+}
+
+.card-title {
+    font-family: var(--font-primary);
+    color: var(--bright-orange);
+    font-weight: 600;
+}
+
+.card-text {
+    font-family: var(--font-primary);
+    color: var(--dark-brown);
+}
+
+/* --- MOBILE RESPONSIVENESS (Screens < 768px) --- */
+@media (max-width: 767.98px) {
+    
+    /* Calendar header */
+    .cal-header {
+        /* On small screen, make buttons stack or flow better */
+        flex-direction: column; 
+    }
+    .cal-header > div:first-child {
+        margin-bottom: 10px;
+    }
+    
+    #calTitle {
+        font-size: 1.2rem; /* Reduce title font size */
+        margin-bottom: 15px;
+    }
+    
+    /* Calendar Grid */
+    .cal-grid {
+        gap: 1px; /* Reduce gap significantly */
+    }
+
+    .cal-cell {
+        padding: 2px 1px; /* Reduce padding */
+        min-height: 50px; /* Reduced min height for compactness */
+        border: 1px solid var(--dark-brown); /* Thinner border */
+        font-size: 0.8rem;
+    }
+
+    .cal-cell strong {
+        font-size: 0.7rem; /* Smaller weekday headers */
+    }
+
+    .cal-cell .date {
+        font-size: 0.8rem; /* Smaller date number */
+    }
+
+    .event {
+        font-size: 0.6rem; /* Smallest font size for events to fit */
+        padding: 1px 2px;
+    }
+}
