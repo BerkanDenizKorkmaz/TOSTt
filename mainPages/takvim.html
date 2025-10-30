@@ -125,7 +125,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Eğitim Serisi: C# Temelleri (Başlangıç)</h5>
                                 <p class="card-text">Unity ile oyun geliştirmek isteyenler için hızlandırılmış C# syntax kursu. C# ve kodlamanın temelleri adım adım. Haftalık oturumlar halinde planlanmıştır. Unity eğitimini desteklemek içindir.</p>
-                                <p><strong>Başlangıç:</strong> (detaylar yakında)</p>
+                                <p><strong>Tarih:</strong> Kasım ayı boyunca her perşembe<strong> Saat:</strong> 19.00</p>
+                                <p><strong>Yer:</strong> Makine Mühendisliği Binası</p>
+                                
                             </div>
                         </div>
                     </button>
@@ -141,7 +143,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Eğitim Serisi: Unity (Başlangıç)</h5>
                                 <p class="card-text"> Unity motoru ile oyun geliştirmeye giriş. Haftalık oturumlar halinde planlanmıştır.</p>
-                                <p><strong>Başlangıç:</strong> (detaylar yakında)</p>
+                                <p><strong>Tarih:</strong> Kasım ayı boyunca her Çarşamba<strong> Saat:</strong> 19.00</p>
+                                <p><strong>Yer:</strong> Makine Mühendisliği Binası</p>
                             </div>
                         </div>
                     </button>
@@ -212,12 +215,21 @@
 
                     // eventsData: add or remove events here. Use ISO date strings 'YYYY-MM-DD'.
                     // Each date maps to an array of events: { title: '...', url: '...'}
-                    /*'2025-10-20': [{emoji: '🎉', title: 'Meetup Party (Tanışma)', url: './bulletin.html#meetup-20-10-2025', image: './meetup.jpg'}],
+                    /*                  '2025-10-20': [{emoji: '🎉', title: 'Meetup Party (Tanışma)', url: './bulletin.html#meetup-20-10-2025', image: './meetup.jpg'}],
                                         '2025-10-27': [{emoji: '🎤', title: 'Seminer: TOSTt Neler Yapacak?', url: './bulletin.html#seminar-27-10-2025', image: './seminar.jpg'}],
                                         '2025-11-03': [{emoji: '🧰', title: 'Eğitim: C# ile Unity (Başlangıç)', url: './bulletin.html#csharp-unity', image: './csharp.jpg'}],
                                         '2025-11-15': [{emoji: '🎨', title: 'Godot & Blender Atölyesi — 1', url: './bulletin.html#godot-blender-1', image: './godot.jpg'}]
                     */
                                     const eventsData = {
+                                        '2025-11-05': [{emoji: '🎮', title: 'Eğitim Serisi: Unity(Başlangıç)-1 ', color: '#e772a0'}],
+                                        '2025-11-12': [{emoji: '🎮', title: 'Eğitim Serisi: Unity(Başlangıç)-2 ', color: '#e772a0'}],
+                                        '2025-11-19': [{emoji: '🎮', title: 'Eğitim Serisi: Unity(Başlangıç)-3 ', color: '#e772a0'}],
+                                        '2025-11-26': [{emoji: '🎮', title: 'Eğitim Serisi: Unity(Başlangıç)-4 ', color: '#e772a0'}],
+
+                                        '2025-11-06': [{emoji: '💻', title: 'Eğitim Serisi: C# Temelleri (Başlangıç)-1 ', color: '#a178db'}],
+                                        '2025-11-13': [{emoji: '💻', title: 'Eğitim Serisi: C# Temelleri (Başlangıç)-2 ', color: '#a178db'}],
+                                        '2025-11-20': [{emoji: '💻', title: 'Eğitim Serisi: C# Temelleri (Başlangıç)-3 ', color: '#a178db'}],
+                                        '2025-11-27': [{emoji: '💻', title: 'Eğitim Serisi: C# Temelleri (Başlangıç)-4 ', color: '#a178db'}]
                                         };
 
                     function eventsForMonth(year, month){
@@ -253,15 +265,28 @@
                             const dateEl = document.createElement('div'); dateEl.className='date'; dateEl.textContent = d; cell.appendChild(dateEl);
 
                             if(events[d]){
-                                                        events[d].forEach(ev=>{
-                                                            const evEl = document.createElement('a'); evEl.className='event';
-                                                            evEl.href = ev.url || '#';
-                                                            evEl.target = '_self';
-                                                            // thumbnail
-                                                                                                                        if(ev.emoji){ const em = document.createElement('span'); em.className='emoji'; em.textContent = ev.emoji; evEl.appendChild(em); }
-                                                                                                                        const txt = document.createElement('span'); txt.textContent = ev.title || ev; evEl.appendChild(txt);
-                                                            cell.appendChild(evEl);
-                                                        });
+                                events[d].forEach(ev=>{
+                                    const evEl = document.createElement('a'); evEl.className='event';
+                                    evEl.href = ev.url || '#';
+                                    evEl.target = '_self';
+
+                                    if(ev.color){
+                                        evEl.style.backgroundColor = ev.color;
+                                        const hex = ev.color.startsWith('#') ? ev.color.substring(1) : ev.color;
+                                        const r = parseInt(hex.substring(0, 2), 16);
+                                        const g = parseInt(hex.substring(2, 4), 16);
+                                        const b = parseInt(hex.substring(4, 6), 16);
+                                        const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+                                        evEl.style.color = (yiq >= 128) ? 'black' : 'white';
+                                    }
+
+                                    // thumbnail
+                                    if(ev.emoji){ 
+                                        const em = document.createElement('span'); em.className='emoji'; em.textContent = ev.emoji; evEl.appendChild(em); 
+                                    }
+                                    const txt = document.createElement('span'); txt.textContent = ev.title || ev; evEl.appendChild(txt);
+                                    cell.appendChild(evEl);
+                                });
                             }
 
                             calGrid.appendChild(cell);
