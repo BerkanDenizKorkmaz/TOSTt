@@ -6,8 +6,6 @@ EBA44C: Erkut orange
 7B542F : dark brown
 FFE6A8: light brown
 FFF4E6: Arda brown
-
-
 */
 
 /* Google Fonts Import */
@@ -21,8 +19,7 @@ FFF4E6: Arda brown
     --light-brown: #FFE6A8;
     --arda-brown: #FFF4E6;
 
-  /* This is the font stack you provided */
-  --font-primary: 'Fredoka', 'Baloo 2', 'Nunito', sans-serif;
+    --font-primary: 'Fredoka', 'Baloo 2', 'Nunito', sans-serif;
 }
 
 .navigation-bar {
@@ -44,7 +41,7 @@ h1, h2, h3, h4, h5, h6, b, strong {
     color: #F5AD18; 
 }
 
-.lead{
+.lead {
     font-family: var(--font-primary);
     font-size: 25px;
 }
@@ -106,12 +103,9 @@ header svg {
 }
 
 .btn-secondary:hover {
-  /* Set the background to white */
-  background-color: white;
-  
-  /* It's usually good practice to adjust the border and text color for contrast */
-  color: var(--bright-orange);
-  border-color: var(--bright-orange);
+    background-color: white;
+    color: var(--bright-orange);
+    border-color: var(--bright-orange);
 }
 
 .btn-outline-primary {
@@ -124,7 +118,6 @@ header svg {
     color: #FFFFFF;
     background-color: var(--bright-orange);
     border-color: var(--bright-orange);
-
 }
 
 .btn-outline-primary:focus,
@@ -137,25 +130,19 @@ header svg {
 }
 
 .custom-hover-outline {
-    background-color: var(--bright-orange); /* Remove background fill */
-    border-color: var(--bright-orange); /* Add primary colored border */
-    /* Default state: filled (handled by btn-primary) */
-    transition: all 0.2s ease-in-out; /* Smooth transition for hover */
+    background-color: var(--bright-orange);
+    border-color: var(--bright-orange);
+    transition: all 0.2s ease-in-out;
 }
 
 .custom-hover-outline:hover {
-    /* On hover: change to outline style */
-    background-color: transparent; /* Remove background fill */
-    border-color: var(--bright-orange); /* Add primary colored border */
+    background-color: transparent;
+    border-color: var(--bright-orange);
 }
 
-/* If you want to ensure the SVG color changes, you might need specific targeting */
 .custom-hover-outline.btn-primary:hover svg {
-    fill: var(--bright-orange); /* Ensure SVG fill color changes on hover */
+    fill: var(--bright-orange);
 }
-
-
-
 
 /* --- Calendar Styling --- */
 .calendar {
@@ -165,6 +152,12 @@ header svg {
     border-radius: 8px;
     background-color: var(--light-brown);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+
+    
+    /* Enable scrolling if content overflows */
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .cal-header {
@@ -188,19 +181,26 @@ header svg {
 
 .cal-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr); /* always 7 columns */    
     gap: 5px;
+    width: 100%;
 }
 
 .cal-cell {
-    padding: 8px 5px;
-    border-radius: 4px;
-    min-height: 80px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    position: relative;
-    border: 5px solid var(--dark-brown); /* Light border for definition */
+    border: 5px solid var(--dark-brown);
+    border-radius: 4px;
+    padding: 5px;
+
+    box-sizing: border-box;
+    min-height: 60px; /* minimum height for readability */
+    height: auto;      /* grow with content */
+    flex: 1 1 auto;
+
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 .cal-cell strong {
@@ -219,7 +219,7 @@ header svg {
 
 /* Highlight Today */
 .cal-cell.today {
-    background-color: var(--erkut-canse-orange); /* Very light blue */
+    background-color: var(--erkut-canse-orange);
     border: 5px solid var(--dark-brown);
 }
 
@@ -238,11 +238,12 @@ header svg {
     border-radius: 3px;
     text-decoration: none;
     color: white;
-    background-color: #dc3545; /* Default event color */
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    background-color: #dc3545;
     transition: background-color 0.2s;
+
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
 }
 
 .event:hover {
@@ -263,47 +264,4 @@ header svg {
 .card-text {
     font-family: var(--font-primary);
     color: var(--dark-brown);
-}
-
-/* --- MOBILE RESPONSIVENESS (Screens < 768px) --- */
-@media (max-width: 767.98px) {
-    
-    /* Calendar header */
-    .cal-header {
-        /* On small screen, make buttons stack or flow better */
-        flex-direction: column; 
-    }
-    .cal-header > div:first-child {
-        margin-bottom: 10px;
-    }
-    
-    #calTitle {
-        font-size: 1.2rem; /* Reduce title font size */
-        margin-bottom: 15px;
-    }
-    
-    /* Calendar Grid */
-    .cal-grid {
-        gap: 1px; /* Reduce gap significantly */
-    }
-
-    .cal-cell {
-        padding: 2px 1px; /* Reduce padding */
-        min-height: 50px; /* Reduced min height for compactness */
-        border: 1px solid var(--dark-brown); /* Thinner border */
-        font-size: 0.8rem;
-    }
-
-    .cal-cell strong {
-        font-size: 0.7rem; /* Smaller weekday headers */
-    }
-
-    .cal-cell .date {
-        font-size: 0.8rem; /* Smaller date number */
-    }
-
-    .event {
-        font-size: 0.6rem; /* Smallest font size for events to fit */
-        padding: 1px 2px;
-    }
 }
