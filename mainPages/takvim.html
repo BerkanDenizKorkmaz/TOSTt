@@ -77,134 +77,174 @@
         </header>
 
         <main class="container py-5">
-            <h1 class="text-center my-4" style="font-family: var(--font-primary); color: var(--dark-brown); font-weight: 700;">UPCOMING EVENTS</h1>
+            <section class="container g-4" style="border: 10px solid var(--dark-brown); border-radius: 15px; padding: 15px; background-color: var(--dark-beige);">
+                <div id="eventCarousel" class="carousel slide carousel-dark">
+                    
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
 
-            <div class="row g-4">
+                    <div class="carousel-inner">
+                        <div class="row g-4 ">
+                            <h1 class="text-center my-4" style="font-family: var(--font-primary); color: var(--dark-brown); font-weight: 700;">ETKİNLİKLERİMİZ</h1>
+                        </div>
 
-                <!-- Template for event card 
-                <div class="col-md-4">
-                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
-                        <div class="card" style="text-align: justify;">
-                            <div class="card-image-wrap">
-                                <img src="../assets/img/party.jpg" style="max-height: 200px;" class="card-img-top" alt="Meetup Party">
-                                <div class="img-gradient"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Meetup Party</h5>
-                                <p class="card-text">Yazılım, TOSTt ve daha birçok topluluğun olduğu tanışma partisi. Oyunlar, atıştırmalıklar ve bolca sohbet — gelin birbirimizi tanıyalım! Tarih: 23.10.2025, Yer: Bani.</p>
-                                <p><strong>Kayıt:</strong> Açık; sınırlı kontenjan.</p>
+                        <div class="carousel-item active">
+                            <div class="row">
+                                
+                                <div class="col-12 mb-3">
+                                    <h3 style="color: var(--dark-brown);">📢 Mevcut Etkinliklerimiz</h3>
+                                    <hr style="border: 5px solid var(--dark-brown);">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
+                                        <div class="card" style="text-align: justify;">
+                                            <div class="card-image-wrap">
+                                                <img src="../assets/img/blenderThumbnail.png" style="max-height: 200px;" class="card-img-top" alt="Eğitim: Blender (Başlangıç)">
+                                                <div class="img-gradient"></div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Eğitim Serisi: Blender (Başlangıç)</h5>
+                                                <p class="card-text">Blender ile temel modelleme/görsel içerik üretimi atölyeleri.</p>
+                                                <p style="margin: 0px;"><strong>Tarih:</strong> Aralık ayı boyunca her Çarşamba</p>
+                                                <p style="margin: 0px;"><strong> Saat:</strong> 19.00 - 21.00</p>
+                                                <p><strong>Yer:</strong> Makine Mühendisliği Binası - D14</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
+                                        <div class="card" style="text-align: justify;">
+                                            <div class="card-image-wrap">
+                                                <img src="../assets/img/Senaryo_eğitimi_poster.jpg" style="max-height: 200px;" class="card-img-top" alt="Eğitim: Blender (Başlangıç)">
+                                                <div class="img-gradient"></div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Senaryo Yazma Atölyesi</h5>
+                                                <p class="card-text"> Öğr. Gör. Dr. Aytuna TOSUNOĞLU ÇALIK ile senaryo yazımı ve temel hikaye kurmayı öğrenmeyi amaçladığımız atölye ve eğitimlerimiz.</p>
+                                                <p style="margin: 0px;"><strong>Tarih:</strong> 11, 18 , 25 Aralık (Online) / 27 Aralık (Yüz yüze)</p>
+                                                <p style="margin: 0px;"><strong> Saat:</strong> 19.00 - 21.00 / (Atölye saati duyurulacak)</p>
+                                                <p><strong>Yer:</strong> Atölye için Makine Mühendisliği Binası - D14</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                                
+                                <div class="col-md-4"></div>
+
                             </div>
                         </div>
-                    </button>
-                </div>
-                -->
+                        
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <h3 style="color: var(--dark-brown);">📅 Gelecek Etkinliklerimiz</h3>
+                                    <hr style="border: 5px solid var(--dark-brown);">
+                                </div>
 
-                <div class="col-md-4">
-                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
-                        <div class="card" style="text-align: justify;">
-                            <div class="card-image-wrap">
-                                <img src="../assets/img/seminer.jpg" style="max-height: 200px;" class="card-img-top" alt="Seminer: TOSTt Neler Yapacak">
-                                <div class="img-gradient"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Seminer: TOSTt Neler Yapacak?</h5>
-                                <p class="card-text">Topluluğun hedefleri, planlanan eğitimler ve projeler hakkında kısa ve eğlenceli bir sunum. Soru-cevap bölümüyle birlikte. Tarih: Açıklanacak, Yer: Açıklanacak.</p>
-                                <p><strong>Saat:</strong> Açıklanacak</p>
-                            </div>
-                        </div>
-                    </button>
-                </div>
-
-                <div class="col-md-4">
-                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
-                        <div class="card" style="text-align: justify;">
-                            <div class="card-image-wrap">
-                                <img src="../assets/img/cSharp.png" class="card-img-top" style="max-height: 200px;" alt="Eğitim: C# Temelleri">
-                                <div class="img-gradient"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Eğitim Serisi: C# Temelleri (Başlangıç)</h5>
-                                <p class="card-text">Unity ile oyun geliştirmek isteyenler için hızlandırılmış C# syntax kursu. C# ve kodlamanın temelleri adım adım. Haftalık oturumlar halinde planlanmıştır. Unity eğitimini desteklemek içindir.</p>
-                                <p><strong>Tarih:</strong> Kasım ayı boyunca her Perşembe<strong> Saat:</strong> 19.00</p>
-                                <p><strong>Yer:</strong> Makine Mühendisliği Binası - D14</p>
+                                <div class="col-md-4">
+                                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
+                                        <div class="card" style="text-align: justify;">
+                                            <div class="card-image-wrap">
+                                                <img src="../assets/img/godotThumbnail.png" style="max-height: 200px;" class="card-img-top" alt="Eğitim: Godot (Başlangıç)">
+                                                <div class="img-gradient"></div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Eğitim Serisi: Godot (Orta)</h5>
+                                                <p class="card-text">Godot motoru açık kaynak kodlu oyun geliştirmeye giriş. Haftalık oturumlar halinde planlanmıştır.</p>
+                                                <p><strong>Başlangıç:</strong> (bahar dönemi)</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                                
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4"></div>
 
                             </div>
                         </div>
-                    </button>
-                </div>
 
-                <div class="col-md-4">
-                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
-                        <div class="card" style="text-align: justify;">
-                            <div class="card-image-wrap">
-                                <img src="../assets/img/unityThumbnail.png" style="max-height: 200px;" class="card-img-top" alt="Eğitim: Unity (Başlangıç)">
-                                <div class="img-gradient"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Eğitim Serisi: Unity (Başlangıç)</h5>
-                                <p class="card-text"> Unity motoru ile oyun geliştirmeye giriş. Haftalık oturumlar halinde planlanmıştır.</p>
-                                <p><strong>Tarih:</strong> Kasım ayı boyunca her Çarşamba<strong> Saat:</strong> 19.00</p>
-                                <p><strong>Yer:</strong> Makine Mühendisliği Binası - D14</p>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <h3 style="color: var(--dark-brown);">⭐ Geçmiş Etkinliklerimiz</h3>
+                                    <hr style="border: 5px solid var(--dark-brown);">
+                                </div>
+                                
+                                <!--Unity Eğitimi-->
+                                <div class="col-md-4">
+                                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
+                                        <div class="card" style="text-align: justify;">
+                                            <div class="card-image-wrap">
+                                                <img src="../assets/img/unityThumbnail.png" style="max-height: 200px;" class="card-img-top" alt="Eğitim: Unity (Başlangıç)">
+                                                <div class="img-gradient"></div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Eğitim Serisi: Unity (Başlangıç)</h5>
+                                                <p class="card-text"> Unity motoru ile oyun geliştirmeye giriş. Haftalık oturumlar halinde planlanmıştır.</p>
+                                                <p><strong>Tarih:</strong> 5,12,19,26 Kasım 2025</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <!--C# Eğitimi-->
+                                <div class="col-md-4">
+                                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
+                                        <div class="card" style="text-align: justify;">
+                                            <div class="card-image-wrap">
+                                                <img src="../assets/img/cSharp.png" class="card-img-top" style="max-height: 200px;" alt="Eğitim: C# Temelleri">
+                                                <div class="img-gradient"></div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Eğitim Serisi: C# Temelleri (Başlangıç)</h5>
+                                                <p class="card-text">Unity ile oyun geliştirmek isteyenler için hızlandırılmış C# syntax kursu. C# ve kodlamanın temelleri adım adım. Haftalık oturumlar halinde planlanmıştır. Unity eğitimini desteklemek içindir.</p>
+                                                <p><strong>Tarih:</strong> 6,13,20,27 Kasım 2025</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
+                                        <div class="card" style="text-align: justify;">
+                                            <div class="card-image-wrap">
+                                                <img src="../assets/img/party.jpg" style="max-height: 200px;" class="card-img-top" alt="Meetup Party">
+                                                <div class="img-gradient"></div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Meetup Party</h5>
+                                                <p class="card-text">Yazılım, TOSTt ve daha birçok topluluğun olduğu tanışma partisi. Oyunlar, atıştırmalıklar ve bolca sohbet — gelin birbirimizi tanıyalım! Tarih: 23.10.2025, Yer: Bani.</p>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                
                             </div>
                         </div>
-                    </button>
-                </div>
+                        
+                    </div>
 
-                <div class="col-md-4">
-                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
-                        <div class="card" style="text-align: justify;">
-                            <div class="card-image-wrap">
-                                <img src="../assets/img/godotThumbnail.png" style="max-height: 200px;" class="card-img-top" alt="Eğitim: Godot (Başlangıç)">
-                                <div class="img-gradient"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Eğitim Serisi: Godot (Başlangıç)</h5>
-                                <p class="card-text">Godot motoru açık kaynak kodlu oyun geliştirmeye giriş. Haftalık oturumlar halinde planlanmıştır.</p>
-                                <p><strong>Başlangıç:</strong> (detaylar yakında)</p>
-                            </div>
-                        </div>
-                    </button>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </section>
+            
 
-                <div class="col-md-4">
-                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
-                        <div class="card" style="text-align: justify;">
-                            <div class="card-image-wrap">
-                                <img src="../assets/img/blenderThumbnail.png" style="max-height: 200px;" class="card-img-top" alt="Eğitim: Blender (Başlangıç)">
-                                <div class="img-gradient"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Eğitim Serisi: Blender (Başlangıç)</h5>
-                                <p class="card-text">Blender ile temel modelleme/görsel içerik üretimi atölyeleri.</p>
-                                <p style="margin: 0px;"><strong>Tarih:</strong> Aralık ayı boyunca her Çarşamba</p>
-                                <p style="margin: 0px;"><strong> Saat:</strong> 19.00 - 21.00</p>
-                                <p><strong>Yer:</strong> Makine Mühendisliği Binası - D14</p>
-                            </div>
-                        </div>
-                    </button>
-                </div>
-
-                <div class="col-md-4">
-                    <button class="btn btn-outline-danger" style="padding: 5px; width: 100%; text-align: left;">
-                        <div class="card" style="text-align: justify;">
-                            <div class="card-image-wrap">
-                                <img src="../assets/img/Senaryo_eğitimi_poster.jpg" style="max-height: 200px;" class="card-img-top" alt="Eğitim: Blender (Başlangıç)">
-                                <div class="img-gradient"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Senaryo Yazma Atölyesi</h5>
-                                <p class="card-text"> Öğr. Gör. Dr. Aytuna TOSUNOĞLU ÇALIK ile senaryo yazımı ve temel hikaye kurmayı öğrenmeyi amaçladığımız atölye ve eğitimlerimiz.</p>
-                                <p style="margin: 0px;"><strong>Tarih:</strong> 11, 18 , 25 Aralık (Online) / 27 Aralık (Yüz yüze)</p>
-                                <p style="margin: 0px;"><strong> Saat:</strong> 19.00 - 21.00 / (Atölye saati duyurulacak)</p>
-                                <p><strong>Yer:</strong> Atölye için Makine Mühendisliği Binası - D14</p>
-                            </div>
-                        </div>
-                    </button>
-                </div>
-
-            </div>
-
-            <hr class="my-5">
+            <hr>
             <!-- Editable Calendar -->
             <section class="calendar" id="editableCalendar">
                 <div class="cal-header">
